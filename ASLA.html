@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASLA — Assistente Inteligente Ascendant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+
+        <div class="brand">
+            <img src="/Gemini_Generated_Image_orwm8worwm8worwm-removebg-preview.png" class="logo" alt="Ascendant">
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">Início</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#como-ajuda">Como Ajuda</a>
+            <a href="#contato" class="btn-nav">Contato</a>
+        </nav>
+
+        <!-- BOTÃO DARK/LIGHT -->
+        <div class="theme-toggle-box">
+            <input type="checkbox" id="themeSwitch">
+            <label for="themeSwitch" class="toggle">
+                <span class="sun">☀</span>
+                <span class="moon">🌙</span>
+            </label>
+        </div>
+
+    </div>
+</header>
+
+<!-- HERO ASLA -->
+<section class="hero asla-hero">
+    <div class="hero-overlay asla-overlay"></div>
+
+    <div class="container hero-content" data-animate="fade">
+        <h1><span>ASLA</span> — Assistente Inteligente Corporativa</h1>
+        <p>
+            A IA avançada da Ascendant que entende seu negócio, apoia seu time,
+            automatiza processos e acelera tomadas de decisão estratégicas.
+        </p>
+
+        <a href="/asla-lading.html" class="btn-primary">conhecer a Asla</a>
+    </div>
+</section>
+
+<!-- RECURSOS -->
+<section class="section" id="recursos">
+    <div class="container">
+
+        <h2 class="section-title" data-animate="fade">Tecnologias que impulsionam a ASLA</h2>
+
+        <div class="cards-grid">
+
+            <div class="card" data-animate="slide" data-delay="1">
+                <h3>IA Contextual</h3>
+                <p>A ASLA interpreta processos internos e responde com precisão corporativa.</p>
+            </div>
+
+            <div class="card" data-animate="slide" data-delay="2">
+                <h3>Análise em Tempo Real</h3>
+                <p>Dados processados instantaneamente para decisões rápidas.</p>
+            </div>
+
+            <div class="card" data-animate="slide" data-delay="3">
+                <h3>Integração Total</h3>
+                <p>Conecta-se a sistemas internos, dashboards, CRMs e ERPs.</p>
+            </div>
+
+            <div class="card" data-animate="slide" data-delay="4">
+                <h3>Aprendizado Contínuo</h3>
+                <p>Evolui com a rotina do seu time e se adapta ao contexto.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- COMO AJUDA -->
+<section class="section-alt" id="como-ajuda">
+    <div class="container">
+
+        <h2 class="section-title" data-animate="fade">
+            Como a ASLA potencializa sua empresa
+        </h2>
+
+        <div class="cases-grid">
+
+            <div class="case" data-animate="fade" data-delay="1">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200" alt="">
+                <h4>Automação de Processos</h4>
+                <p>Reduz falhas, aumenta eficiência e libera sua equipe para atividades estratégicas.</p>
+            </div>
+
+            <div class="case" data-animate="fade" data-delay="2">
+                <img src="/imgs/mao-trabalhando-com-suporte-tecnico-de-telefone-inteligente-e-servico-ao-cliente-business-technology-internet-ui_102957-416.avif" alt="">
+                <h4>Suporte Operacional Inteligente</h4>
+                <p>Responde dúvidas, orienta processos e executa comandos.</p>
+            </div>
+
+            <div class="case" data-animate="fade" data-delay="3">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200" alt="">
+                <h4>Insights Avançados</h4>
+                <p>Entrega análises estratégicas baseadas no seu próprio histórico corporativo.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTATO / CTA -->
+<section class="section" id="contato">
+    <div class="container contact-box" data-animate="fade">
+        <h2>Fale com a Equipe Ascendant</h2>
+        <p>Deseja integrar a ASLA ao seu ambiente corporativo?</p>
+
+        <a href="mailto:contato@ascendant.com.br" class="btn-primary">
+            Solicitar Integração
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Ascendant — Tecnologia Corporativa</p>
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+// DARK/LIGHT ANIMADO
+const root = document.documentElement;
+const switcher = document.getElementById("themeSwitch");
+
+switcher.addEventListener("change", () => {
+    const mode = switcher.checked ? "dark" : "light";
+    root.setAttribute("data-theme", mode);
+    localStorage.setItem("ascendant-theme", mode);
+});
+
+// carregar tema salvo
+const saved = localStorage.getItem("ascendant-theme");
+if (saved) {
+    root.setAttribute("data-theme", saved);
+    switcher.checked = saved === "dark";
+}
+
+// animações premium
+document.addEventListener("DOMContentLoaded", () => {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("animated");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll("[data-animate]").forEach(el => obs.observe(el));
+});
+</script>
+
+</body>
+</html>
